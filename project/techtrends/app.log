@@ -1,0 +1,12 @@
+WARNING: werkzeug:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO: werkzeug:  * Running on http://192.168.0.16:3111/ (Press CTRL+C to quit)
+INFO: app: 02/04/2024, 16:24:13, Article "KubeCon + CloudNativeCon 2021" retrieved!
+INFO: werkzeug: 127.0.0.1 - - [04/Feb/2024 16:24:13] "GET /2 HTTP/1.1" 200 -
+INFO: werkzeug: 127.0.0.1 - - [04/Feb/2024 16:24:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO: werkzeug: 127.0.0.1 - - [04/Feb/2024 16:24:34] "GET /create HTTP/1.1" 200 -
+INFO: werkzeug: 127.0.0.1 - - [04/Feb/2024 16:24:34] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO: app: 02/04/2024, 16:24:39, Article "new post" created!
+INFO: werkzeug: 127.0.0.1 - - [04/Feb/2024 16:24:39] "[32mPOST /create HTTP/1.1[0m" 302 -
+INFO: werkzeug: 127.0.0.1 - - [04/Feb/2024 16:24:40] "GET / HTTP/1.1" 200 -
+INFO: werkzeug: 127.0.0.1 - - [04/Feb/2024 16:24:40] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
