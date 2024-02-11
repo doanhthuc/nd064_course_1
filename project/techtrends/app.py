@@ -1,3 +1,4 @@
+from enum import Enum
 import sqlite3
 import logging
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
@@ -48,7 +49,7 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-        log_message('A non-existing article is accessed and a 404 page is returned')
+        log_message('A non-existing article is accessed and a 404 page is returned', level=logging.ERROR)
         return render_template('404.html'), 404
     else:
         post_title = post['title']
@@ -106,20 +107,27 @@ def metrics():
 def create_log_message_with_time(message):
     now = datetime.datetime.now()
     return f'{now.strftime("%m/%d/%Y, %H:%M:%S")}, {message}'
-
-def log_message(message):
-    app.logger.info(create_log_message_with_time(message))
+    
+def log_message(message, level=logging.INFO):
+    if level == logging.ERROR:
+        app.logger.error(create_log_message_with_time(message))
+    else:
+        app.logger.info(create_log_message_with_time(message))
 
 def config_logger():
     global log_file
     
-    stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.INFO)
+    info_handler = logging.StreamHandler(sys.stdout)
+    info_handler.setLevel(logging.DEBUG)
+    
+    error_handler = logging.StreamHandler(sys.stderr)
+    error_handler.setLevel(logging.DEBUG)
+    
+    handlers = [info_handler, logging.FileHandler(log_file, mode='w')]
 
     format_output = ('%(levelname)s: %(name)s: %(message)s')
 
-    logging.basicConfig(format=format_output, level=logging.DEBUG, handlers=[logging.FileHandler(log_file, mode='w'),
-                              stream_handler])
+    logging.basicConfig(format=format_output, level=logging.DEBUG, handlers=handlers)
 
 # start the application on port 3111
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 docker build -t techtrends .
 
 ## Docker commands used to run the application
-docker run -p 3111:3111 --name techtrends-app techtrends
+docker run -d -p 7111:3111 --name techtrends-app techtrends
 
 ## Docker commands used to get the application logs
 docker logs -f techtrends-app
@@ -16,23 +16,25 @@ docker logs -f techtrends-app
 WARNING: werkzeug:  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
 INFO: werkzeug:  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:41] "GET / HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:41] "GET /static/css/main.css HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:41] "GET /favicon.ico HTTP/1.1" 404 -
-INFO: app: 02/04/2024, 09:45:43, Article "2020 CNCF Annual Report" retrieved!
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:43] "GET /1 HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:43] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO: app: 02/04/2024, 09:45:46, Article "KubeCon + CloudNativeCon 2021" retrieved!
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:46] "GET /2 HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:46] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:48] "GET /create HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:45:48] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO: app: 02/04/2024, 09:46:10, Article "Thuc's post" created!
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:46:10] "POST /create HTTP/1.1" 302 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:46:10] "GET / HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:46:10] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO: app: 02/04/2024, 09:46:11, The "About Us" page is retrieved
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:46:11] "GET /about HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:46:12] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:46:14] "GET / HTTP/1.1" 200 -
-INFO: werkzeug: 172.17.0.1 - - [04/Feb/2024 09:46:14] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:12] "GET / HTTP/1.1" 200 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:12] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: app: 02/09/2024, 03:51:18, Article "2020 CNCF Annual Report" retrieved!
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:18] "GET /1 HTTP/1.1" 200 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:18] "GET /static/css/main.css HTTP/1.1" 304 -
+ERROR: app: 02/09/2024, 03:51:22, A non-existing article is accessed and a 404 page is returned
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:22] "GET /11 HTTP/1.1" 404 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:22] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: app: 02/09/2024, 03:51:24, The "About Us" page is retrieved
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:24] "GET /about HTTP/1.1" 200 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:24] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:28] "GET /create HTTP/1.1" 200 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:29] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: app: 02/09/2024, 03:51:33, Article "Thuc" created!
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:33] "POST /create HTTP/1.1" 302 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:33] "GET / HTTP/1.1" 200 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:33] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: app: 02/09/2024, 03:51:35, Article "Thuc" retrieved!
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:35] "GET /7 HTTP/1.1" 200 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:35] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:37] "GET / HTTP/1.1" 200 -
+INFO: werkzeug: 172.17.0.1 - - [09/Feb/2024 03:51:37] "GET /static/css/main.css HTTP/1.1" 304 -
